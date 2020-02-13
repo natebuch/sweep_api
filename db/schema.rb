@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_205714) do
+ActiveRecord::Schema.define(version: 2020_02_09_180556) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "description"
@@ -45,15 +45,19 @@ ActiveRecord::Schema.define(version: 2020_02_01_205714) do
   create_table "games", force: :cascade do |t|
     t.integer "client_id", null: false
     t.string "description"
-    t.integer "team_id", null: false
     t.integer "status_id", null: false
     t.datetime "start"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "game_type_id"
+    t.integer "team_id"
     t.index ["client_id"], name: "index_games_on_client_id"
     t.index ["status_id"], name: "index_games_on_status_id"
-    t.index ["team_id"], name: "index_games_on_team_id"
+  end
+
+  create_table "games_teams", id: false, force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "team_id", null: false
   end
 
   create_table "participants", force: :cascade do |t|
@@ -89,6 +93,13 @@ ActiveRecord::Schema.define(version: 2020_02_01_205714) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_questions_on_game_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "team_id", null: false
+    t.index ["player_id"], name: "index_roles_on_player_id"
+    t.index ["team_id"], name: "index_roles_on_team_id"
   end
 
   create_table "selections", force: :cascade do |t|
@@ -131,12 +142,13 @@ ActiveRecord::Schema.define(version: 2020_02_01_205714) do
   add_foreign_key "cards", "players"
   add_foreign_key "games", "clients"
   add_foreign_key "games", "statuses"
-  add_foreign_key "games", "teams"
   add_foreign_key "participants", "games"
   add_foreign_key "participants", "teams"
   add_foreign_key "picks", "players"
   add_foreign_key "picks", "selections"
   add_foreign_key "questions", "games"
+  add_foreign_key "roles", "players"
+  add_foreign_key "roles", "teams"
   add_foreign_key "selections", "questions"
   add_foreign_key "sweeps", "games"
   add_foreign_key "sweeps", "players"

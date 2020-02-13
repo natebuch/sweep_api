@@ -12,10 +12,6 @@ json.games @games do |game|
     json.name game.client.name
   end
 
-  json.teams do
-    json.names game.teams.names
-  end
-
   json.game_type do
     json.id game.game_type.description
   end

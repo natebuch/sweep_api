@@ -5,12 +5,12 @@ class GamesController < ApplicationController
   # GET /games
   def index
     @games = Game.descending
-    render json: @games
+    respond_with @games
   end
 
   # GET /games/1
   def show
-    render json: @game
+    respond_with @game
   end
 
   # POST /games
