@@ -19,7 +19,6 @@ json.game do
   json.status do
     json.description @game.status.description
     json.rank @game.status.rank
-
-    
   end
+  
 end
