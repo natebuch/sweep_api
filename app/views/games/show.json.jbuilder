@@ -13,12 +13,12 @@ json.game do
   end
 
   json.game_type do
-    json.id @game.game_type.description
+    json.description @game.game_type.description
   end
 
   json.status do
     json.description @game.status.description
     json.rank @game.status.rank
   end
-  
+
 end

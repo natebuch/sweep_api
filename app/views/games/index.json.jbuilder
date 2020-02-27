@@ -13,7 +13,7 @@ json.games @games do |game|
   end
 
   json.game_type do
-    json.id game.game_type.description
+    json.description game.game_type.description
   end
 
   json.status do
