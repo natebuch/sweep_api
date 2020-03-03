@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_180556) do
+ActiveRecord::Schema.define(version: 2020_03_01_172819) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "description"
@@ -120,12 +120,12 @@ ActiveRecord::Schema.define(version: 2020_02_09_180556) do
   end
 
   create_table "sweeps", force: :cascade do |t|
-    t.integer "game_id", null: false
     t.integer "player_id", null: false
     t.integer "is_winner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_sweeps_on_game_id"
+    t.integer "card_id"
+    t.index ["card_id"], name: "index_sweeps_on_card_id"
     t.index ["player_id"], name: "index_sweeps_on_player_id"
   end
 
@@ -150,6 +150,6 @@ ActiveRecord::Schema.define(version: 2020_02_09_180556) do
   add_foreign_key "roles", "players"
   add_foreign_key "roles", "teams"
   add_foreign_key "selections", "questions"
-  add_foreign_key "sweeps", "games"
+  add_foreign_key "sweeps", "cards"
   add_foreign_key "sweeps", "players"
 end

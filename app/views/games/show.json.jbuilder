@@ -21,4 +21,9 @@ json.game do
     json.rank @game.status.rank
   end
 
+  json.questions @game.questions do |question|
+    json.description question.description
+    json.status question.status
+  end
+
 end

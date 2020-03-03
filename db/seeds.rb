@@ -52,5 +52,70 @@
 #   start: DateTime.current}
 # ])
   
+
+# question = Question.create([
+#   {game_id: 1,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 1,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 1,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 3",
+#   status: 1
+#   }
+# ])
+
+
   
 
