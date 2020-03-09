@@ -6,157 +6,162 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-client = Client.create(name: "NFL")
+# client = Client.create(name: "NFL")
 
-team = Team.create([{name: "Chiefs"},{name: "Cardinals"},{name: "Bears"},{name: "Browns"}])
+# team = Team.create([{name: "Chiefs"},{name: "Cardinals"},{name: "Bears"},{name: "Browns"}])
 
-status = Status.create([
-  {description: "Pending", rank: 1},
-  {description: "In Progress", rank: 2},
-  {description: "Complete", rank: 3},
-  {description: "Closed Out", rank: 4}
-])
+# status = Status.create([
+#   {description: "Pending", rank: 1},
+#   {description: "In Progress", rank: 2},
+#   {description: "Complete", rank: 3},
+#   {description: "Closed Out", rank: 4}
+# ])
 
-type = GameType.create([{description: "Matchup"},{description: "Global"}])
+# type = GameType.create([{description: "Matchup"},{description: "Global"}])
 
-game = Game.create([
-  {client_id: 1, 
-  team_id: 1, 
-  status_id: 1, 
-  game_type_id: 1, 
-  description: "Chiefs vs Cardinals", 
-  start: DateTime.current},
-  {client_id: 1, 
-  team_id: 2, 
-  status_id: 1, 
-  game_type_id: 1, 
-  description: "Cardinals vs Chiefs", 
-  start: DateTime.current},
-  {client_id: 1, 
-  team_id: 3, 
-  status_id: 1, 
-  game_type_id: 1, 
-  description: "Browns vs Bears", 
-  start: DateTime.current},
-  {client_id: 1, 
-  team_id: 4, 
-  status_id: 1, 
-  game_type_id: 1, 
-  description: "Bears vs Browns", 
-  start: DateTime.current},
-  {client_id: 1, 
-  team_id: 1, 
-  status_id: 1, 
-  game_type_id: 2, 
-  description: "Chiefs vs Cardinals", 
-  start: DateTime.current}
-])
+# game = Game.create([
+#   {client_id: 1, 
+#   team_id: 1, 
+#   status_id: 1, 
+#   game_type_id: 1, 
+#   description: "Chiefs vs Cardinals", 
+#   start: DateTime.current},
+#   {client_id: 1, 
+#   team_id: 2, 
+#   status_id: 1, 
+#   game_type_id: 1, 
+#   description: "Cardinals vs Chiefs", 
+#   start: DateTime.current},
+#   {client_id: 1, 
+#   team_id: 3, 
+#   status_id: 1, 
+#   game_type_id: 1, 
+#   description: "Browns vs Bears", 
+#   start: DateTime.current},
+#   {client_id: 1, 
+#   team_id: 4, 
+#   status_id: 1, 
+#   game_type_id: 1, 
+#   description: "Bears vs Browns", 
+#   start: DateTime.current},
+#   {client_id: 1, 
+#   team_id: 1, 
+#   status_id: 1, 
+#   game_type_id: 2, 
+#   description: "Chiefs vs Cardinals", 
+#   start: DateTime.current}
+# ])
   
 
-question = Question.create([
-  {game_id: 1,
-  description: "question 1",
-  status: 1
-  },
-  {game_id: 1,
-  description: "question 2",
-  status: 1
-  },
-  {game_id: 1,
-  description: "question 3",
-  status: 1
-  },
-  {game_id: 2,
-  description: "question 1",
-  status: 1
-  },
-  {game_id: 2,
-  description: "question 2",
-  status: 1
-  },
-  {game_id: 2,
-  description: "question 3",
-  status: 1
-  },
-  {game_id: 3,
-  description: "question 1",
-  status: 1
-  },
-  {game_id: 3,
-  description: "question 2",
-  status: 1
-  },
-  {game_id: 3,
-  description: "question 3",
-  status: 1
-  },
-  {game_id: 4,
-  description: "question 1",
-  status: 1
-  },
-  {game_id: 4,
-  description: "question 2",
-  status: 1
-  },
-  {game_id: 4,
-  description: "question 3",
-  status: 1
-  },
-  {game_id: 5,
-  description: "question 1",
-  status: 1
-  },
-  {game_id: 5,
-  description: "question 2",
-  status: 1
-  },
-  {game_id: 5,
-  description: "question 3",
-  status: 1
-  }
-])
+# question = Question.create([
+#   {game_id: 1,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 1,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 1,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 2,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 3,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 4,
+#   description: "question 3",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 1",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 2",
+#   status: 1
+#   },
+#   {game_id: 5,
+#   description: "question 3",
+#   status: 1
+#   }
+# ])
 
-player = Player.create([
-  {
-    first_name: "Nate",
-    last_name: "The Great"
-  },
-  {
-    first_name: "Rian",
-    last_name: "Weights"
-  },
-  {
-    first_name: "Beeny",
-    last_name: "Leevy"
-  },
-  {
-    first_name: "Kris",
-    last_name: "Pyne"
-  },
-  {
-    first_name: "Attie",
-    last_name: "Bean"
-  }
-])
+# player = Player.create([
+#   {
+#     first_name: "Nate",
+#     last_name: "The Great"
+#   },
+#   {
+#     first_name: "Rian",
+#     last_name: "Weights"
+#   },
+#   {
+#     first_name: "Beeny",
+#     last_name: "Leevy"
+#   },
+#   {
+#     first_name: "Kris",
+#     last_name: "Pyne"
+#   },
+#   {
+#     first_name: "Attie",
+#     last_name: "Bean"
+#   }
+# ])
 
 # card = Card.create([
-#   {game_id: 1,
+#   {
+#     game_id: 1,
 #     player_id: 1,
 #     status: 1
 #   },
-#   {game_id: 2,
+#   {
+#     game_id: 2,
 #     player_id: 2,
 #     status: 1
 #   },
-#   {game_id: 3,
+#   {
+#     game_id: 3,
 #     player_id: 3,
 #     status: 1
 #   },
-#   {game_id: 4,
+#   {
+#     game_id: 4,
 #     player_id: 4,
 #     status: 1
 #   },
-#   {game_id: 5,
+#   {
+#     game_id: 5,
 #     player_id: 1, 
 #     status: 1
 #   }
