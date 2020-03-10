@@ -26,4 +26,19 @@ json.game do
     json.status question.status
   end
 
+  json.players @game.players do |player|
+    json.id  player.id
+    json.first_name  player.first_name
+    json.last_name  player.last_name
+    json.address player.address.description
+  end
+
+ json.cards @game.cards do |card|
+   json.winner_id card.player.id
+   json.winner_first_name card.player.first_name
+   json.winner_last_name card.player.last_name
+   json.winner_address card.player.address.description
+   json.sweep card.sweep.is_winner
+  end
+
 end

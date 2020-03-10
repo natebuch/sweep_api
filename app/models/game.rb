@@ -7,9 +7,9 @@ class Game < ApplicationRecord
   has_many :cards
   has_many :questions
   has_many :selections, through: :questions
-  has_many :sweeps
+  has_many :sweeps, through: :cards
   has_one :team, through: :roles
-  has_many :players, through: :roles
-  
+  has_many :players, through: :cards
+    
   scope :descending, -> { order(start: :desc) } 
 end
