@@ -22,9 +22,11 @@ json.games @games do |game|
   end
 
   json.questions game.questions do |question|
-    json.id question.id
-    json.description question.description
-    json.status question.status
+    if question.is_active
+      json.id question.id
+      json.description question.description
+      json.status question.status
+    end
   end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_172819) do
+ActiveRecord::Schema.define(version: 2020_04_12_001028) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "description"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_172819) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_active"
     t.index ["game_id"], name: "index_questions_on_game_id"
   end
 
