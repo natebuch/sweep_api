@@ -11,10 +11,10 @@ client = Client.create(name: "NFL")
 team = Team.create([{name: "Chiefs"},{name: "Cardinals"},{name: "Bears"},{name: "Browns"}])
 
 status = Status.create([
-  {description: "Pending", rank: 1},
-  {description: "In Progress", rank: 2},
-  {description: "Complete", rank: 3},
-  {description: "Closed Out", rank: 4}
+  {description: "pending", rank: 1},
+  {description: "in progress", rank: 2},
+  {description: "complete", rank: 3},
+  {description: "closed out", rank: 4}
 ])
 
 type = GameType.create([{description: "Matchup"},{description: "Global"}])

@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      render json: @question, status: :created, location: @question
+      respond_with @question
     else
       render json: @question.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def question_params
-      params.require(:question).permit(:game_id, :description, :status)
+      params.require(:question).permit(:game_id, :description, :status, :is_active)
     end
 end
