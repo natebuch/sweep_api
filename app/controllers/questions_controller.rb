@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   def update
     if @question.update(question_params)
-      render json: @question
+      respond_with @question
     else
       render json: @question.errors, status: :unprocessable_entity
     end
@@ -48,4 +48,7 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:game_id, :description, :status, :is_active)
     end
+
+   
+
 end

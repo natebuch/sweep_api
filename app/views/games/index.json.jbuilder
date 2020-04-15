@@ -25,6 +25,7 @@ json.games @games do |game|
     if question.is_active
       json.id question.id
       json.description question.description
+      json.is_active question.is_active
       json.status question.status
     end
   end
