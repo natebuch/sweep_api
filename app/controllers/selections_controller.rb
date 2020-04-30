@@ -1,11 +1,12 @@
 class SelectionsController < ApplicationController
   before_action :set_selection, only: [:show, :update, :destroy]
+  respond_to :json
 
   # GET /selections
   def index
     @selections = Selection.all
 
-    render json: @selections
+    respond_with @selections
   end
 
   # GET /selections/1
@@ -18,7 +19,7 @@ class SelectionsController < ApplicationController
     @selection = Selection.new(selection_params)
 
     if @selection.save
-      render json: @selection, status: :created, location: @selection
+      respond_with @selection, status: :created, location: @selection
     else
       render json: @selection.errors, status: :unprocessable_entity
     end
@@ -27,7 +28,7 @@ class SelectionsController < ApplicationController
   # PATCH/PUT /selections/1
   def update
     if @selection.update(selection_params)
-      render json: @selection
+      respond_with @selection
     else
       render json: @selection.errors, status: :unprocessable_entity
     end

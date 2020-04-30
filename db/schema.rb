@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_001028) do
+ActiveRecord::Schema.define(version: 2020_04_29_000703) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "description"
@@ -105,11 +105,10 @@ ActiveRecord::Schema.define(version: 2020_04_12_001028) do
 
   create_table "selections", force: :cascade do |t|
     t.integer "question_id", null: false
-    t.string "description"
     t.string "text"
-    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_right"
     t.index ["question_id"], name: "index_selections_on_question_id"
   end
 
