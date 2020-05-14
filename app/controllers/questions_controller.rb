@@ -46,7 +46,12 @@ class QuestionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def question_params
-      params.require(:question).permit(:game_id, :description, :status, :is_active)
+      params.require(:question).permit(
+        :game_id,
+        :description, 
+        :status, 
+        :is_active, 
+        selections_attributes: [:question_id, :text, :is_right])
     end
 
    

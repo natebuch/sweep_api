@@ -4,4 +4,6 @@ class Question < ApplicationRecord
 
   enum status: [ :incomplete, :complete ]
 
+  accepts_nested_attributes_for :selections
+
 end

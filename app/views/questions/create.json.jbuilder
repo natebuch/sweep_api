@@ -9,7 +9,7 @@ json.question do
     json.id selection.id
     json.question_id selection.question_id
     json.text selection.text
-    json.selection_is_right selection.is_right
+    json.is_right selection.is_right
   end
 
 end
