@@ -23,6 +23,7 @@ json.game do
 
   json.questions @game.questions do |question|
       json.id question.id
+      json.game_id question.game_id
       json.description question.description
       json.is_active question.is_active
       json.status question.status
