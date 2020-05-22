@@ -6,5 +6,5 @@ class Question < ApplicationRecord
 
   accepts_nested_attributes_for :selections
 
-  scope :descending, -> { order(question_id: :desc) } 
+  scope :ascending, -> { order(question_id: :asc) } 
 end
