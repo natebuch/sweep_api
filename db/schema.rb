@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_000703) do
+ActiveRecord::Schema.define(version: 2020_05_25_203951) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
     t.string "description"
-    t.integer "player_id", null: false
+    t.bigint "player_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["player_id"], name: "index_addresses_on_player_id"
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "player_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "player_id", null: false
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,26 +46,28 @@ ActiveRecord::Schema.define(version: 2020_04_29_000703) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer "client_id", null: false
+    t.bigint "client_id", null: false
     t.string "description"
-    t.integer "status_id", null: false
+    t.bigint "status_id", null: false
+    t.string "references"
+    t.bigint "game_type_id", null: false
     t.datetime "start"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "game_type_id"
     t.integer "team_id"
     t.index ["client_id"], name: "index_games_on_client_id"
+    t.index ["game_type_id"], name: "index_games_on_game_type_id"
     t.index ["status_id"], name: "index_games_on_status_id"
   end
 
   create_table "games_teams", id: false, force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "team_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "team_id", null: false
   end
 
   create_table "participants", force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "team_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "team_id", null: false
     t.integer "field"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,8 +76,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_000703) do
   end
 
   create_table "picks", force: :cascade do |t|
-    t.integer "selection_id", null: false
-    t.integer "player_id", null: false
+    t.bigint "selection_id", null: false
+    t.bigint "player_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["player_id"], name: "index_picks_on_player_id"
@@ -87,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_000703) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "game_id", null: false
+    t.bigint "game_id", null: false
     t.text "description"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
@@ -97,14 +102,14 @@ ActiveRecord::Schema.define(version: 2020_04_29_000703) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer "player_id", null: false
-    t.integer "team_id", null: false
+    t.bigint "player_id", null: false
+    t.bigint "team_id", null: false
     t.index ["player_id"], name: "index_roles_on_player_id"
     t.index ["team_id"], name: "index_roles_on_team_id"
   end
 
   create_table "selections", force: :cascade do |t|
-    t.integer "question_id", null: false
+    t.bigint "question_id", null: false
     t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -120,11 +125,12 @@ ActiveRecord::Schema.define(version: 2020_04_29_000703) do
   end
 
   create_table "sweeps", force: :cascade do |t|
-    t.integer "player_id", null: false
+    t.bigint "player_id", null: false
     t.integer "is_winner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "card_id"
+    t.bigint "card_id"
+    t.integer "win_status"
     t.index ["card_id"], name: "index_sweeps_on_card_id"
     t.index ["player_id"], name: "index_sweeps_on_player_id"
   end

@@ -56,63 +56,78 @@ game = Game.create([
 question = Question.create([
   {game_id: 1,
   description: "question 1",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 1,
   description: "question 2",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 1,
   description: "question 3",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 2,
   description: "question 1",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 2,
   description: "question 2",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 2,
   description: "question 3",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 3,
   description: "question 1",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 3,
   description: "question 2",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 3,
   description: "question 3",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 4,
   description: "question 1",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 4,
   description: "question 2",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 4,
   description: "question 3",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 5,
   description: "question 1",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 5,
   description: "question 2",
-  status: 1
+  status: 1,
+  is_active: 1
   },
   {game_id: 5,
   description: "question 3",
-  status: 1
+  status: 1,
+  is_active: 1
   }
 ])
 
@@ -169,7 +184,57 @@ card = Card.create([
     status: 1
   },
   {
+    game_id: 1,
+    player_id: 2,
+    status: 1
+  },
+  {
+    game_id: 1,
+    player_id: 3,
+    status: 1
+  },
+  {
+    game_id: 1,
+    player_id: 4,
+    status: 1
+  },
+  {
+    game_id: 1,
+    player_id: 5,
+    status: 1
+  },
+  {
     game_id: 2,
+    player_id: 1,
+    status: 1
+  },
+  {
+    game_id: 2,
+    player_id: 2,
+    status: 1
+  },
+  {
+    game_id: 2,
+    player_id: 3,
+    status: 1
+  },
+  {
+    game_id: 2,
+    player_id: 4,
+    status: 1
+  },
+  {
+    game_id: 2,
+    player_id: 5,
+    status: 1
+  },
+  {
+    game_id: 3,
+    player_id: 1,
+    status: 1
+  },
+  {
+    game_id: 3,
     player_id: 2,
     status: 1
   },
@@ -179,13 +244,63 @@ card = Card.create([
     status: 1
   },
   {
+    game_id: 3,
+    player_id: 4,
+    status: 1
+  },
+  {
+    game_id: 3,
+    player_id: 5,
+    status: 1
+  },
+  {
+    game_id: 4,
+    player_id: 1,
+    status: 1
+  },
+  {
     game_id: 4,
     player_id: 4,
     status: 1
   },
   {
+    game_id: 4,
+    player_id: 3,
+    status: 1
+  },
+  {
+    game_id: 4,
+    player_id: 4,
+    status: 1
+  },
+  {
+    game_id: 4,
+    player_id: 5,
+    status: 1
+  },
+  {
     game_id: 5,
-    player_id: 1, 
+    player_id: 1,
+    status: 1
+  },
+  {
+    game_id: 5,
+    player_id: 2,
+    status: 1
+  },
+  {
+    game_id: 5,
+    player_id: 3,
+    status: 1
+  },
+  {
+    game_id: 5,
+    player_id: 4,
+    status: 1
+  },
+  {
+    game_id: 5,
+    player_id: 5,
     status: 1
   }
 ])
@@ -193,28 +308,153 @@ card = Card.create([
 sweep = Sweep.create([
   {
     player_id: 1,
-    is_winner: 1,
-    card_id: 1    
+    is_winner: 0,
+    card_id: 1,
+    win_status: nil     
   },
   {
     player_id: 2,
     is_winner: 1,
-    card_id: 2    
+    card_id: 2,
+    win_status: nil    
   },
   {
     player_id: 3,
     is_winner: 1,
-    card_id: 3    
+    card_id: 3,
+    win_status: nil   
   },
   {
     player_id: 4,
     is_winner: 1,
-    card_id: 4    
+    card_id: 4,
+    win_status: nil   
   },
   {
     player_id: 5,
     is_winner: 1,
-    card_id: 5    
+    card_id: 5,
+    win_status: nil    
+  },
+  {
+    player_id: 1,
+    is_winner: 0,
+    card_id: 6,
+    win_status: nil     
+  },
+  {
+    player_id: 2,
+    is_winner: 1,
+    card_id: 7,
+    win_status: nil    
+  },
+  {
+    player_id: 3,
+    is_winner: 1,
+    card_id: 8,
+    win_status: nil   
+  },
+  {
+    player_id: 4,
+    is_winner: 1,
+    card_id: 9,
+    win_status: nil   
+  },
+  {
+    player_id: 5,
+    is_winner: 1,
+    card_id: 10,
+    win_status: nil    
+  },
+  {
+    player_id: 1,
+    is_winner: 0,
+    card_id: 11,
+    win_status: nil     
+  },
+  {
+    player_id: 2,
+    is_winner: 1,
+    card_id: 12,
+    win_status: nil    
+  },
+  {
+    player_id: 3,
+    is_winner: 1,
+    card_id: 13,
+    win_status: nil   
+  },
+  {
+    player_id: 4,
+    is_winner: 1,
+    card_id: 14,
+    win_status: nil   
+  },
+  {
+    player_id: 5,
+    is_winner: 1,
+    card_id: 15,
+    win_status: nil    
+  },
+  {
+    player_id: 1,
+    is_winner: 0,
+    card_id: 16,
+    win_status: nil     
+  },
+  {
+    player_id: 2,
+    is_winner: 1,
+    card_id: 17,
+    win_status: nil    
+  },
+  {
+    player_id: 3,
+    is_winner: 1,
+    card_id: 18,
+    win_status: nil   
+  },
+  {
+    player_id: 4,
+    is_winner: 1,
+    card_id: 19,
+    win_status: nil   
+  },
+  {
+    player_id: 5,
+    is_winner: 1,
+    card_id: 20,
+    win_status: nil    
+  },
+  {
+    player_id: 1,
+    is_winner: 0,
+    card_id: 21,
+    win_status: nil     
+  },
+  {
+    player_id: 2,
+    is_winner: 1,
+    card_id: 22,
+    win_status: nil    
+  },
+  {
+    player_id: 3,
+    is_winner: 1,
+    card_id: 23,
+    win_status: nil   
+  },
+  {
+    player_id: 4,
+    is_winner: 1,
+    card_id: 24,
+    win_status: nil   
+  },
+  {
+    player_id: 5,
+    is_winner: 1,
+    card_id: 25,
+    win_status: nil    
   }
 ])
 

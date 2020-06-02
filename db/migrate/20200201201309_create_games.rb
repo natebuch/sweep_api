@@ -5,8 +5,8 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :description
       t.references :team, null: false, foreign_key: true
       t.references :status, null: false, foreign_key: true
-      t.string :game_type
       t.string :references
+      t.references :game_type, null: false, goreign_key: true
       t.datetime :start
 
       t.timestamps
