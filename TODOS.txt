@@ -1,0 +1,14 @@
+Things that need to be done:
+ - Need questions to splay as they are added
+ 
+ - Scope for ordering questions so they appear correctly on rerender
+   - Order as correctly added in create questions
+
+ - Creating multitple instances of questions throwing error from handleQuestionAdd
+
+ - Add modal to edit individual questions
+ 
+ - Add ability to select winner randomly
+
+ - Add ability to see many players with paginations / count
+

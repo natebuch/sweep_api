@@ -12,23 +12,31 @@ json.game do
     json.name @game.client.name
   end
 
-  json.game_type do
-    json.description @game.game_type.description
-  end
-
   json.status do
     json.description @game.status.description
     json.rank @game.status.rank
   end
 
+  json.game_type do
+    json.description @game.game_type.description
+  end
+
   json.questions @game.questions do |question|
-    if question.is_active
       json.id question.id
+      json.game_id question.game_id
       json.description question.description
       json.is_active question.is_active
       json.status question.status
-    end
+      
+      json.selections question.selections do |selection|
+        json.id selection.id
+        json.question_id selection.question_id
+        json.text selection.text
+        json.is_right selection.is_right
+      end
   end
+
+  
 
   json.players @game.players do |player|
     json.id  player.id
@@ -38,11 +46,12 @@ json.game do
   end
 
  json.cards @game.cards do |card|
-   json.winner_id card.player.id
-   json.winner_first_name card.player.first_name
-   json.winner_last_name card.player.last_name
-   json.winner_address card.player.address.description
-   json.sweep card.sweep.is_winner
+   json.player card.player.id
+   json.first_name card.player.first_name
+   json.last_name card.player.last_name
+   json.address card.player.address.description
+   json.is_winner card.sweep.is_winner
+   json.win_status card.sweep.win_status
   end
 
 end
